@@ -4,6 +4,8 @@ promatil:
       - url: http://loki-gateway/loki/api/v1/push
         tenant_id: 1
 loki:
+  chunksCache:
+    allocatedMemory: 200
   loki:
     auth_enabled: false
     commonConfig:
@@ -29,17 +31,17 @@ loki:
         index:
           prefix: index_
           period: 24h
-  extraArgs:
-    - "-config.expand-env=true"
-  extraEnv:
-    - name: SECRET_KEY
-      valueFrom:
-        secretKeyRef:
-          name: s3
-          key: secret_key
-    - name: ACCESS_KEY
-      valueFrom:
-        secretKeyRef:
-          name: s3
-          key: access_key
+    extraArgs:
+      - "-config.expand-env=true"
+    extraEnv:
+      - name: SECRET_KEY
+        valueFrom:
+          secretKeyRef:
+            name: s3
+            key: secret_key
+      - name: ACCESS_KEY
+        valueFrom:
+          secretKeyRef:
+            name: s3
+            key: access_key
 
