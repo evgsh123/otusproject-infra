@@ -26,7 +26,7 @@ appVersion: "1.16.0"
 dependencies:
 - name: kube-prometheus
   version: 9.5.7
-  repository:  oci://registry-1.docker.io/bitnamicharts/
+  repository:  oci://registry-1.docker.io/bitnamicharts
 
 - name: loki
   version: 6.2.0
