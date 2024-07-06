@@ -6,6 +6,8 @@ promatil:
 loki:
   chunksCache:
     allocatedMemory: 200
+  resultsCache:
+    allocatedMemory: 200
   loki:
     auth_enabled: false
     commonConfig:
